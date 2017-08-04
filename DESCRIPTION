@@ -1,0 +1,15 @@
+Package: spd4testing
+Type: Package
+Title: Small panel data for testing
+Date: 2017-08-4
+Version: 0.1.0
+Author: Elías Cisneros <ec@elias-cisneros.de>
+Maintainer: Elías Cisneros <ec@elias-cisneros.de>
+Description: Creates a random panel data set with a group structure, missing values and constants. 
+    It is usefull to test new funcitons for panel data manipulation and post-estimation analyses.  
+License: MIT + file LICENSE
+Imports: plm
+Depends: 
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
