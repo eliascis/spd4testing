@@ -22,6 +22,7 @@
 #' @example man/eg.spd4testing.R
 #' @export
 
+
 spd4testing<-function(
   N=4,
   G=2,
