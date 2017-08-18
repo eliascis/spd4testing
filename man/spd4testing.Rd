@@ -2,7 +2,7 @@
 % Please edit documentation in R/spd4testing.R
 \name{spd4testing}
 \alias{spd4testing}
-\title{Small panel data set for testing}
+\title{Small Panel Data Set for Testing}
 \usage{
 spd4testing(N = 4, G = 2, Y = 5, missingY = FALSE, missingX = FALSE)
 }

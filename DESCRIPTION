@@ -6,7 +6,7 @@ Version: 0.1.0
 Author: Elías Cisneros <ec@elias-cisneros.de>
 Maintainer: Elías Cisneros <ec@elias-cisneros.de>
 Description: Creates a random panel data set with a group structure, missing values and constants. 
-    It is usefull to test new funcitons for panel data manipulation and post-estimation analyses.  
+    It is useful to test new functions for panel data manipulation and post-estimation analyses.  
 License: GPL-2
 Imports: plm
 Depends: 

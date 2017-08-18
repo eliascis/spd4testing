@@ -1,4 +1,4 @@
-#' @title Small panel data set for testing
+#' @title Small Panel Data Set for Testing
 #'
 #' @description spd4testing creates a panel data set with individual observations over time that belong to different groups.
 #' Individuals are coded with the variable "id". The time variable is given by "year". The group identifier is "gid".
@@ -21,6 +21,8 @@
 #' @author Elías Cisneros <ec@elias-cisneros.de>
 #' @example man/eg.spd4testing.R
 #' @export
+
+#lets test
 
 
 spd4testing<-function(
