@@ -26,12 +26,20 @@
 
 
 spd4testing<-function(
-  N=4,
+  N=5,
   G=2,
   Y=5,
   missingY=FALSE,
-  missingX=FALSE
+  missingX=FALSE,
+  missing.pre.years=TRUE
 ){
+
+  N=6
+  G=2
+  Y=5
+  missingY=T
+  missingX=T
+  missing.pre.years=T
 
   #check if numbers add up
   if ((N/G)!=round(N/G)){
@@ -46,6 +54,9 @@ spd4testing<-function(
     gid=rep(1:G,each=Y*(N/G))
   )
 
+  #weights
+  d[,"w"]<-rep(c(1,0.5,sample(c(1,1,1,0.5),(N-2),replace=T)),each=Y)
+
   #error
   d[,"e"]<-rnorm(N*Y,0,1)
 
@@ -59,26 +70,30 @@ spd4testing<-function(
   coef.u<-5
   d[,"y"] = coef.x*d[,"x"] + coef.u*d[,"u"] + d[,"e"]
 
-  #weights
-  d[,"w"]<-rep(c(1,0.5,sample(c(1,1,1,0.5),(N-2),replace=T)),each=Y)
+  #missing years in first two ids
+  if (missing.pre.years==T){
+    i<-which(d$id==1 & d$year %in% c(2001,2002))
+    ii<-which(d$id==2 & d$year %in% c(2001))
+    iii<-c(i,ii)
+    d<-d[-iii,]
+  }
 
   #missing outcome values
   if (missingY==T){
-    s<-1:N
+    s<-3:N
     i<-sample(s,1)
     d[d$id==i,"y"]<-NA
   }
 
   #missing explanatory values
   if (missingX==T){
-    s<-1:N
+    s<-3:N
     if(missingY==T){
       s<-s[s!=i]
     }
     ii<-sample(s,1)
     d[d$id==ii,"x"]<-NA
   }
-
   #out
   return(d)
 }
