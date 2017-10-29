@@ -26,7 +26,7 @@
 
 
 spd4testing<-function(
-  N=5,
+  N=6,
   G=2,
   Y=5,
   missingY=FALSE,
@@ -34,12 +34,12 @@ spd4testing<-function(
   missing.pre.years=TRUE
 ){
 
-  N=6
-  G=2
-  Y=5
-  missingY=T
-  missingX=T
-  missing.pre.years=T
+  # N=6
+  # G=2
+  # Y=5
+  # missingY=T
+  # missingX=T
+  # missing.pre.years=T
 
   #check if numbers add up
   if ((N/G)!=round(N/G)){
