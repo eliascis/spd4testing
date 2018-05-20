@@ -104,7 +104,7 @@ spd4testing<-function(
     iyear<-iyear[-length(iyear)]
     iyear<-sample(iyear,1)
     c(iid,iyear)
-    d[!(d$id==iid & d$year==iyear),]
+    d<-d[!(d$id==iid & d$year==iyear),]
   }
 
   #out
