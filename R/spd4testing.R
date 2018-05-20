@@ -32,6 +32,7 @@ spd4testing<-function(
   missingY=FALSE,
   missingX=FALSE,
   missing.pre.years=TRUE
+  holes=TRUE
 ){
 
   # N=6
@@ -94,6 +95,18 @@ spd4testing<-function(
     ii<-sample(s,1)
     d[d$id==ii,"x"]<-NA
   }
+
+  #holes
+  if (holes==T){
+    iid<-sample(unique(d$id),1)
+    iyear<-d[d$id==iid,"year"]
+    iyear<-iyear[-1]
+    iyear<-iyear[-length(iyear)]
+    iyear<-sample(iyear,1)
+    c(iid,iyear)
+    d[!(d$id==iid & d$year==iyear),]
+  }
+
   #out
   return(d)
 }
