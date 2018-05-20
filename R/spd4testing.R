@@ -31,7 +31,7 @@ spd4testing<-function(
   Y=5,
   missingY=FALSE,
   missingX=FALSE,
-  missing.pre.years=TRUE
+  missing.pre.years=TRUE,
   holes=TRUE
 ){
 
